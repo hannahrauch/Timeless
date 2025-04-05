@@ -11,7 +11,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>Edit app/index.tsx to edit this screen. Testing</Text>
       <TouchableOpacity onPress={() => router.push('/home')}>
         <Text>Login</Text>
       </TouchableOpacity>
