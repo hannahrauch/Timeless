@@ -1,7 +1,7 @@
 import { Text,TextInput,Image, View, StyleSheet, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
 
-export default function Index() {
+export default function Login() {
   const router = useRouter();
   return (
     <View
@@ -9,43 +9,51 @@ export default function Index() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#89023E",
+        backgroundColor: "#DB658D",
       }}
     >
-      <View
-      style={styles.inputContainer}
-      >
-      </View>
-
       <Image
       source={require("../assets/images/image6.png")}
       style={{position: 'absolute', top: 50, width: '100%'}}
       />
-
-  
-      <View style={{width: '120%', position: 'absolute', top: 250,justifyContent: "center", alignItems: "center",}}>
+      <View style={{width: '100%', position: 'absolute', top: 250,justifyContent: "center", alignItems: "center",}}>
         <Text style={{
           fontFamily: 'Bio Rhyme SemiBold',
-          fontSize: 35,
-          margin: 10,
+          fontSize: 33,
+          margin: 20,
         }}>
           Timeless Fashion
         </Text>
+        <TextInput
+            style={styles.inputContainer}
+            placeholder="Email"
+            placeholderTextColor="#1C2021"
+        >
+        </TextInput>
+        
+        <TextInput
+            style={styles.inputContainer}
+            placeholder="Password"
+            placeholderTextColor="#1C2021"
+        >
+        </TextInput>
 
-        <Image
-      source={require("../assets/images/FashionLogo.png")}
-      style={{position: 'absolute', top: 100, width: '55%', height: 250, borderRadius: 150,}}
-      />
+        <Text style={{
+          fontSize: 18,
+          alignSelf: 'flex-start',
+          marginLeft: '10%',
+        }}>
+          Forgot Password?
+        </Text>
 
 
         <TouchableOpacity
-          onPress={() => router.push('/login')}
+          onPress={() => router.push('/home')}
           style={styles.loginButton}>
         <Text style={{
           fontFamily: 'Bio Rhyme SemiBold',
           fontSize: 26,
           color:"#7E0A3F",
-          
         }}
         >Login</Text>
         
@@ -59,17 +67,17 @@ export default function Index() {
 
 const styles = StyleSheet.create({
     inputContainer: {
-        backgroundColor: '#AF5D7D',
+        backgroundColor: 'white',
         flexDirection: 'row',
         borderRadius: 5,
         borderColor: '#E9E9E9',
         elevation: 10,
-        height: 550,
-        width: '90%',
+        height: 50,
+        width: '80%',
         fontSize: 20,
         color: "#A39F9F",
         paddingHorizontal: 15,
-        marginTop: 110,
+        marginBottom: 15,
     },
     
     loginButton: {
@@ -80,10 +88,6 @@ const styles = StyleSheet.create({
       alignItems: "center",
       justifyContent: "center",
       margin: 40,
-      top: 280,
-    },
-
-   
-    
+    }
     
 });
