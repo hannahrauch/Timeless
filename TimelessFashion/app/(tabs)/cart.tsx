@@ -7,6 +7,7 @@ export default function Cart() {
         flex: 1,
         alignItems: "center",
         backgroundColor: "#DB658D",
+        backgroundColor: "#DB658D",
       }}
     >
       <View style = {styles.box}>
