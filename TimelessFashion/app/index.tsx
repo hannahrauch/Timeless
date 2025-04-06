@@ -16,9 +16,10 @@ export default function Index() {
       source={require("../assets/images/image6.png")}
       style={{position: 'absolute', top: 50}}
       />
-      <View style={{width: '100%', position: 'absolute', top: 250,justifyContent: "center", alignItems: "center"}}>
+      <View style={{width: '100%', position: 'absolute', top: 250,justifyContent: "center", alignItems: "center",}}>
         <Text style={{
-          fontSize: 40,
+          fontFamily: 'Bio Rhyme SemiBold',
+          fontSize: 33,
           margin: 40,
         }}>
           Timeless Fashion
@@ -50,7 +51,8 @@ export default function Index() {
           onPress={() => router.push('/home')}
           style={styles.loginButton}>
         <Text style={{
-          fontSize: 30,
+          fontFamily: 'Bio Rhyme SemiBold',
+          fontSize: 25,
           color:"#7E0A3F",
         }}
         >Login</Text>
