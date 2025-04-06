@@ -25,6 +25,15 @@ const OutfitDetails = () => {
     if (outfit && outfit.length > 0) {
         return (
             <SafeAreaView style={{ flex: 1, backgroundColor: '#DB658D' }}>
+                <View style = {styles.headerbox}>
+                      <Text style = {{
+                        color:'white',
+                        fontSize: 32,
+                        fontFamily: 'Bio Rhyme SemiBold',
+                      }}>
+                        Outfit Items
+                      </Text>
+                </View>
                 <ScrollView horizontal={true} pagingEnabled={true}>
                     <View style={styles.outfitContainer}>
                         {outfit.map((currentItem, itemIndex) => (
@@ -33,15 +42,34 @@ const OutfitDetails = () => {
                                     <Image
                                     source={{ uri: currentItem.imageUrl }}
                                     style={styles.itemImage}
-                                />
-                                <Text style={styles.itemName}>{currentItem.name}</Text>
-
+                                    />
+                                    <View>
+                                        <Text style={styles.textfont}>Item {currentItem.id}</Text> 
+                                        <Image
+                                        source={require("../assets/images/yellowStars.png")}
+                                        style={{width: 180, height: 32,}}
+                                        />      
+                                    </View>                         
                                 </View>
-                                <Text>Type: {currentItem.type}</Text>
-                                <Text>Tag: {currentItem.tag}</Text>
+                                <Text style={styles.textfont}>Name: {currentItem.name} </Text>
+                                <Text style={styles.textfont}>Type: {currentItem.type}</Text>
+                                <Text style={styles.textfont}>Tag: {currentItem.tag}</Text>
+                                <Text style={styles.textfont}>Sustainability: </Text>
+                                <Text style={styles.textfont}>Seller Rating: 8/10</Text>
+
                                 <TouchableOpacity
-                                        style={styles.checkoutBox}
-                                        >
+                                    style={[styles.checkoutBox,{ bottom: 100}]}>
+                                          <Text
+                                          style={{
+                                            fontFamily: 'Bio Rhyme SemiBold',
+                                            fontSize: 15,
+                                          }}
+                                          >
+                                            Favorite Item 
+                                          </Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    style={[styles.checkoutBox, {backgroundColor: '#DB658D'}]}>
                                           <Text
                                           style={{
                                             fontFamily: 'Bio Rhyme SemiBold',
@@ -73,7 +101,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     itemContainer: {
-        alignItems: 'center',
+        alignItems: 'flex-start',
         width: 370,
         height: 600,
         backgroundColor: 'white',
@@ -96,7 +124,23 @@ const styles = StyleSheet.create({
         height: 50,
         width: 300,
         justifyContent: 'center',
+        alignSelf: 'center',
         alignItems: 'center',
+        position: 'absolute',
+        bottom: 40,
+      },
+      headerbox:{
+        backgroundColor: '#7E0A3F',
+        height:60,
+        width:'100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginVertical: 40,
+      },
+      textfont: {
+        fontFamily: 'Abhaya Libre Regular',
+        fontSize: 22,
+        marginTop: 15,
       },
 });
 

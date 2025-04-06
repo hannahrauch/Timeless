@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Image } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function Favorites() {
@@ -11,14 +11,14 @@ export default function Favorites() {
         backgroundColor: '#DB658D',
       }}
 >     <View style = {styles.headerbox}>
-<Text style = {{
+      <Text style = {{
         color:'white',
         fontSize: 32,
         fontFamily: 'Bio Rhyme SemiBold',
       }}>
         Favorites
       </Text>
-        </View>
+      </View>
       
       <View style = {styles.subtitlebox}>
         <Text style = {{
@@ -30,26 +30,30 @@ export default function Favorites() {
         </Text>
         <View style = {styles.iteminfobox}>
           <View style={{
-  justifyContent: 'space-between',
-  flexDirection: 'row',}}>
-<Text style = {{
-            color: 'black',
-            fontSize: 22,
-            fontFamily: 'Abhaya Libre Regular',
-          }}>
-            1980's Dress
-            
-          </Text>
+            justifyContent: 'space-between',
+            flexDirection: 'row',}}>
+            <Image
+              source={{uri: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain'}}
+              style={styles.image}
+             />
+             <View>
+             <Text style = {{
+                color: 'black',
+                fontSize: 22,
+                fontFamily: 'Abhaya Libre Regular',
+              }}>
+                1980's Dress
+              </Text>
+              <Text style = {{
+                color: 'black',
+                fontSize: 18,
+                fontFamily: 'Abhaya Libre Regular'
+              }}>
+                $10.00
+              </Text>
+             </View>
           <Ionicons name="close-circle-sharp"></Ionicons>
           </View>
-          
-          <Text style = {{
-            color: 'black',
-            fontSize: 18,
-            fontFamily: 'Abhaya Libre Regular'
-          }}>
-            $10.00
-          </Text>
         </View>
         <Text style = {{
           color:'white',
@@ -60,33 +64,70 @@ export default function Favorites() {
           Saved Outfits
         </Text>
         <View style = {styles.outfitinfobox}>
-        <Text style = {{
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Text style = {{
           fontFamily: 'Abhaya Libre Regular',
           fontSize: 22
         }}>
           Name: Vintage
-          <Ionicons name="close-circle-sharp"></Ionicons>
         </Text>
+        <Ionicons name="close-circle-sharp" size={25}></Ionicons>
+          </View>
+        
         <Text style = {{
           fontFamily: 'Abhaya Libre Regular',
           fontSize: 22
         }}>
           Includes:
-          <Ionicons name="create-outline" size = {20}></Ionicons>
         </Text>
-        <Text style = {{
-          marginTop: 40,
-          fontFamily: 'Abhaya Libre Regular',
-          fontSize: 17
-        }}>
-          1980's Dress
-        </Text>
-        <Text style = {{
-          fontFamily: 'Abhaya Libre Regular',
-          fontSize: 17
-        }}>
-          $10.00
-        </Text>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View>
+          <Text style = {{
+            marginTop: 40,
+            fontFamily: 'Abhaya Libre Regular',
+            fontSize: 17
+          }}>
+            1980's Dress
+          </Text>
+          <Text style = {{
+            fontFamily: 'Abhaya Libre Regular',
+            fontSize: 17
+          }}>
+            $10.00
+          </Text>
+        </View>
+        <View>
+          <Text style = {{
+            marginTop: 40,
+            fontFamily: 'Abhaya Libre Regular',
+            fontSize: 17
+          }}>
+            1970's Gloves
+          </Text>
+          <Text style = {{
+            fontFamily: 'Abhaya Libre Regular',
+            fontSize: 17
+          }}>
+            $8.50
+          </Text>
+        </View>
+        <View>
+          <Text style = {{
+            marginTop: 40,
+            fontFamily: 'Abhaya Libre Regular',
+            fontSize: 17
+          }}>
+            Earrings
+          </Text>
+          <Text style = {{
+            fontFamily: 'Abhaya Libre Regular',
+            fontSize: 17
+          }}>
+            $15.00
+          </Text>
+        </View>
+        </View>
+        
         </View>
       </View>
     </View>
@@ -103,19 +144,32 @@ headerbox:{
   marginTop: 100,
 },
 subtitlebox:{
-  backgroundColor: '#F9D9DA',
-  height:640,
-  width:380,
+  backgroundColor: '#E793AC',
+  borderRadius: 5,
+  height:620,
+  width:'90%',
+  marginTop: 15,
+  padding: 5,
+  alignItems: 'center',
 },
 iteminfobox:{
   backgroundColor: 'white',
-  height: 250,
-  width: 360,
+  height: 150,
+  width: '95%',
   alignItems: 'center',
+  justifyContent: 'center',
+  borderRadius: 5,
 },
 outfitinfobox:{
   backgroundColor: 'white',
   height: 230,
-  width: 360,
-}
+  width: '95%',
+  borderRadius: 5,
+  padding: 5,
+},
+image: {
+  height: 100,
+  width: 80,
+  borderRadius: 5,
+},
 });

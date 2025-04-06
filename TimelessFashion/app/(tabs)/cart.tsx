@@ -4,9 +4,27 @@ import { useState } from 'react';
 
 export default function Cart() {
   const [items, setItems] = useState([
-    { id: '1', title: 'Green blouse', tag: 'Vintage', type: 'Top', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$10'},
-    { id: '2', title: 'spiffy shoes', tag: 'Trending', type: 'Accessories', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$20'},
-    { id: '3', title: 'joe mama pants', tag: 'Upcoming', type: 'Bottom', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$30'},
+    {
+      "id": "1",
+      "name": "Blue Blouse",
+      "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743901396/Joanna_Blouse_u6ie8h.jpg",
+      "type": "top",
+      "tag": "vintage"
+    },
+    {
+      "id": "2",
+      "name": "Striped Shirt",
+      "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743901486/This_item_is_unavailable_-_Etsy_vngper.jpg",
+      "type": "top",
+      "tag": "vintage"
+    },
+    {
+      "id": "15",
+      "name": "Jeans with Denim Bows",
+      "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902828/Fall_winter_Women_Jeans_Stylish_Bow_Tie_High_Waist_Straight_Legs_Denim_Pants_dw0gby.jpg",
+      "type": "pants",
+      "tag": "upcoming"
+    },
   ]);
 
   const deleteItem = (id) => {
@@ -41,15 +59,15 @@ export default function Cart() {
         style={styles.viewBox}
         >
         <Image
-          source={{uri: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain'}}
+          source={{ uri: item.imageUrl}}
           style={styles.image}
         />
         <View>
-          <Text style={{fontFamily: 'Abhaya Libre Regular', fontSize: 23}}>
+          <Text style={{fontFamily: 'Abhaya Libre Regular', fontSize: 20}}>
             {item.tag}
           </Text>
-          <Text style={{fontFamily: 'Abhaya Libre Regular', fontSize: 23}}>
-            {item.title}
+          <Text style={{fontFamily: 'Abhaya Libre Regular', fontSize: 20}}>
+            {item.name}
           </Text>
         </View>
         <TouchableOpacity style={{position: 'absolute', right: 10, top: 10}}
@@ -66,8 +84,6 @@ export default function Cart() {
         style = {{
           fontFamily: 'Bio Rhyme SemiBold',
           fontSize: 18,
-          marginTop: 10,
-          marginLeft: 10,
         }}
         >
           Total: $10.00
@@ -96,8 +112,8 @@ const styles = StyleSheet.create({
   box: {
     marginTop: 100,
     backgroundColor: '#7E0A3F',
-    height: 70,
-    width:400,
+    height:60,
+    width:'100%',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -126,14 +142,16 @@ const styles = StyleSheet.create({
       width: '90%',
       bottom: 35,
       position: 'absolute',
+      borderRadius: 5,
+      justifyContent: 'space-between',
+      padding: 10,
+      flexDirection: 'row',
     },
     checkoutBox: {
       backgroundColor: "#F9D9DA",
       borderRadius: 5,
       height: 30,
       width: 120,
-      marginLeft: 220,
-      bottom: 28,
       justifyContent: 'center',
       alignItems: 'center',
     },
@@ -141,5 +159,6 @@ const styles = StyleSheet.create({
       height: 100,
       width: 80,
       borderRadius: 5,
+      marginRight: 5,
   },
 });

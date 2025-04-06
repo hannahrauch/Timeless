@@ -34,7 +34,7 @@ export default function Index() {
 
         <Image
       source={require("../assets/images/FashionLogo.png")}
-      style={{position: 'absolute', top: 100, width: '55%', height: 250, borderRadius: 150,}}
+      style={{position: 'absolute', top: 100, width: 250, height: 250, borderRadius: 150,}}
       />
 
 
@@ -48,7 +48,6 @@ export default function Index() {
           
         }}
         >Login</Text>
-        
         </TouchableOpacity>
         
       </View>
@@ -82,8 +81,4 @@ const styles = StyleSheet.create({
       margin: 40,
       top: 280,
     },
-
-   
-    
-    
 });

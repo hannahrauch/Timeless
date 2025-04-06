@@ -39,9 +39,10 @@ export default function Login() {
         </TextInput>
 
         <Text style={{
-          fontSize: 18,
+          fontSize: 20,
           alignSelf: 'flex-start',
           marginLeft: '10%',
+          fontFamily: 'Abhaya Libre Regular',
         }}>
           Forgot Password?
         </Text>
@@ -75,9 +76,10 @@ const styles = StyleSheet.create({
         height: 50,
         width: '80%',
         fontSize: 20,
-        color: "#A39F9F",
+        color: "#1C2021",
         paddingHorizontal: 15,
         marginBottom: 15,
+        fontFamily: 'Abhaya Libre Regular',
     },
     
     loginButton: {

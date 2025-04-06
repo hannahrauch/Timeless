@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Image } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { SafeAreaView } from "react-native-safe-area-context";
 export default function Profile() {
@@ -14,16 +14,17 @@ export default function Profile() {
             <Text style={{
               color:'white',
               fontSize: 32,
+              fontFamily: 'Bio Rhyme SemiBold',
             }}>
               Profile
             </Text>
           </View>
-          <View style={{marginTop: 30}}>
+          <View style={{marginTop: 70}}>
             <Text style ={{
               color : 'white',
               fontSize : 25,
             }}>
-              Jazmin Gutierrez:
+              Username:
             </Text>
             <Text style = {{
               color : '#7E0A3F',
@@ -83,6 +84,10 @@ export default function Profile() {
               <Ionicons name="archive-outline" size = {20}></Ionicons>
             </Text>
           </View>
+          <Image
+            source={require("../../assets/images/pfp.png")}
+            style={{position: 'absolute', top: 150, height: 100, width: 103}}
+          />
     </View>
 
     );
