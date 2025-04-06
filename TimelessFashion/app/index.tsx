@@ -1,4 +1,4 @@
-import { Text,TextInput, View, StyleSheet, TouchableOpacity } from "react-native";
+import { Text,TextInput,Image, View, StyleSheet, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
 
 export default function Index() {
@@ -12,43 +12,53 @@ export default function Index() {
         backgroundColor: "#DB658D",
       }}
     >
-      <Text style={{
-        fontSize: 40,
-      }}>
-        Timeless Fashion
-      </Text>
-      <TextInput
-          style={styles.inputContainer}
-          placeholder="Email"
-          placeholderTextColor="#1C2021"
-      >
-      </TextInput>
-      
-      <TextInput
-          style={styles.inputContainer}
-          placeholder="Password"
-          placeholderTextColor="#1C2021"
-      >
-      </TextInput>
+      <Image
+      source={require("../assets/images/image6.png")}
+      style={{position: 'absolute', top: 50}}
+      />
+      <View style={{width: '100%', position: 'absolute', top: 250,justifyContent: "center", alignItems: "center"}}>
+        <Text style={{
+          fontSize: 40,
+          margin: 40,
+        }}>
+          Timeless Fashion
+        </Text>
+        <TextInput
+            style={styles.inputContainer}
+            placeholder="Email"
+            placeholderTextColor="#1C2021"
+        >
+        </TextInput>
+        
+        <TextInput
+            style={styles.inputContainer}
+            placeholder="Password"
+            placeholderTextColor="#1C2021"
+        >
+        </TextInput>
 
-      <Text style={{
-        fontSize: 18,
-      }}>
-        Forgot Password?
-      </Text>
+        <Text style={{
+          fontSize: 18,
+          alignSelf: 'flex-start',
+          marginLeft: '10%',
+        }}>
+          Forgot Password?
+        </Text>
 
 
-      <TouchableOpacity
-        onPress={() => router.push('/home')}
-        style={styles.loginButton}>
-      <Text style={{
-        fontSize: 30,
-        color:"#7E0A3F",
-      }}
-      >Login</Text>
-      
-      </TouchableOpacity>
-      
+        <TouchableOpacity
+          onPress={() => router.push('/home')}
+          style={styles.loginButton}>
+        <Text style={{
+          fontSize: 30,
+          color:"#7E0A3F",
+        }}
+        >Login</Text>
+        
+        </TouchableOpacity>
+        
+      </View>
+
     </View>
   );
 }
@@ -75,6 +85,7 @@ const styles = StyleSheet.create({
       height: 50,
       alignItems: "center",
       justifyContent: "center",
+      margin: 40,
     }
     
 });
