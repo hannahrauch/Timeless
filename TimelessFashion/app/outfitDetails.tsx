@@ -1,5 +1,5 @@
 import { useLocalSearchParams } from 'expo-router';
-import { View, Text, SafeAreaView, Image, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, SafeAreaView, Image, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 import React from 'react';
 
 interface Item {
@@ -39,6 +39,18 @@ const OutfitDetails = () => {
                                 </View>
                                 <Text>Type: {currentItem.type}</Text>
                                 <Text>Tag: {currentItem.tag}</Text>
+                                <TouchableOpacity
+                                        style={styles.checkoutBox}
+                                        >
+                                          <Text
+                                          style={{
+                                            fontFamily: 'Bio Rhyme SemiBold',
+                                            fontSize: 15,
+                                          }}
+                                          >
+                                            Add to Cart 
+                                          </Text>
+                                </TouchableOpacity>
                             </View>
                         ))}
                     </View>
@@ -78,6 +90,14 @@ const styles = StyleSheet.create({
         marginTop: 5,
         fontWeight: 'bold',
     },
+    checkoutBox: {
+        backgroundColor: "#F9D9DA",
+        borderRadius: 5,
+        height: 50,
+        width: 300,
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
 });
 
 export default OutfitDetails;

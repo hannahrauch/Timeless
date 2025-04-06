@@ -8,6 +8,7 @@ export default function Favorites() {
       style={{
         flex: 1,
         alignItems: "center",
+        backgroundColor: '#DB658D',
       }}
 >     <View style = {styles.headerbox}>
 <Text style = {{
@@ -28,14 +29,20 @@ export default function Favorites() {
           Saved Items
         </Text>
         <View style = {styles.iteminfobox}>
-          <Text style = {{
+          <View style={{
+  justifyContent: 'space-between',
+  flexDirection: 'row',}}>
+<Text style = {{
             color: 'black',
             fontSize: 22,
-            fontFamily: 'Abhaya Libre Regular'
+            fontFamily: 'Abhaya Libre Regular',
           }}>
             1980's Dress
-            <Ionicons name="close-circle-sharp"></Ionicons>
+            
           </Text>
+          <Ionicons name="close-circle-sharp"></Ionicons>
+          </View>
+          
           <Text style = {{
             color: 'black',
             fontSize: 18,
