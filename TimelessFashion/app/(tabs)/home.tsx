@@ -23,6 +23,24 @@ export default function Home() {
                 value={searchQuery}
                 onChangeText={(query) => handleSearch(query)}>
         </TextInput>
+
+        <View style={{justifyContent: 'space-between', flexDirection: 'row', width: '90%'}}>
+            <View style={[styles.tag,{backgroundColor: '#FFC4DF'}]}>
+                <Text style={styles.textStyle1}>
+                    Vintage
+                </Text>
+            </View>
+            <View style={[styles.tag,{backgroundColor: '#D63B82'}]}>
+                <Text style={styles.textStyle1}>
+                    Trending
+                </Text>
+            </View>
+            <View style={[styles.tag,{backgroundColor: '#D30262'}]}>
+                <Text style={styles.textStyle1}>
+                    Upcoming
+                </Text>
+            </View>
+        </View>
         <ScrollView>
             <TouchableOpacity>
                 <Text style= {{
@@ -30,9 +48,14 @@ export default function Home() {
                     alignSelf: 'flex-end',
                     margin: 10,
                     fontSize: 20,
+                    fontFamily: 'Abhaya Libre Regular',
                 }}>{`See outfit details >`}
                 </Text>
             </TouchableOpacity>
+
+            <View>
+
+            </View>
 
             <View style={{justifyContent: 'space-between', flexDirection: 'row', width: '90%'}}>
                 <View style={styles.box}>
@@ -43,6 +66,8 @@ export default function Home() {
                     <View style={styles.pricebox}>
                         <Text style={{
                             color: 'white',
+                            fontFamily: 'Abhaya Libre Regular',
+                            fontSize: 17,
                         }}>$10</Text>
                     </View>
                 </View>
@@ -54,6 +79,8 @@ export default function Home() {
                     <View style={styles.pricebox}>
                         <Text style={{
                             color: 'white',
+                            fontFamily: 'Abhaya Libre Regular',
+                            fontSize: 17,
                         }}>$10</Text>
                     </View>
                 </View>
@@ -65,6 +92,8 @@ export default function Home() {
                     <View style={styles.pricebox}>
                         <Text style={{
                             color: 'white',
+                            fontSize: 17,
+                            fontFamily: 'Abhaya Libre Regular',
                         }}>$10</Text>
                     </View>
                 </View>
@@ -74,6 +103,7 @@ export default function Home() {
                 height: 2,
                 width: '100%',
                 backgroundColor: '#F7FF8B',
+                marginVertical: 30,
             }}>
             </View>
             
@@ -119,5 +149,17 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 10,
         borderBottomRightRadius: 10,
 
-    }
+    },
+    textStyle1: {
+        color: 'white',
+        fontSize: 20,
+        fontFamily: 'Abhaya Libre Regular',
+    },
+    tag: {
+        width: 115,
+        height: 30,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 20,
+    },
 });
