@@ -1,4 +1,4 @@
-import { Text, View, TextInput, StyleSheet, ScrollView, Image } from "react-native";
+import { Text, View, TextInput, StyleSheet, TouchableOpacity, ScrollView, Image, FlatList } from "react-native";
 import { useState} from "react";
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        margin: 10,
+        backgroundColor: '#DB658D',
       }}
     >
         <TextInput
@@ -24,17 +24,59 @@ export default function Home() {
                 onChangeText={(query) => handleSearch(query)}>
         </TextInput>
         <ScrollView>
-            <View style={styles.box}>
-                <Image
-                    source={{uri: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain'}}
-                    style={styles.image}
-                />
-                <View style={styles.pricebox}>
-                    <Text style={{
-                        color: 'white',
-                    }}>$10</Text>
+            <TouchableOpacity>
+                <Text style= {{
+                    color: 'white',
+                    alignSelf: 'flex-end',
+                    margin: 10,
+                    fontSize: 20,
+                }}>{`See outfit details >`}
+                </Text>
+            </TouchableOpacity>
+
+            <View style={{justifyContent: 'space-between', flexDirection: 'row', width: '90%'}}>
+                <View style={styles.box}>
+                    <Image
+                        source={{uri: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain'}}
+                        style={styles.image}
+                    />
+                    <View style={styles.pricebox}>
+                        <Text style={{
+                            color: 'white',
+                        }}>$10</Text>
+                    </View>
+                </View>
+                <View style={styles.box}>
+                    <Image
+                        source={{uri: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain'}}
+                        style={styles.image}
+                    />
+                    <View style={styles.pricebox}>
+                        <Text style={{
+                            color: 'white',
+                        }}>$10</Text>
+                    </View>
+                </View>
+                <View style={styles.box}>
+                    <Image
+                        source={{uri: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain'}}
+                        style={styles.image}
+                    />
+                    <View style={styles.pricebox}>
+                        <Text style={{
+                            color: 'white',
+                        }}>$10</Text>
+                    </View>
                 </View>
             </View>
+            
+            <View style={{
+                height: 2,
+                width: '100%',
+                backgroundColor: '#F7FF8B',
+            }}>
+            </View>
+            
         </ScrollView>
     </View>
   );
@@ -48,18 +90,19 @@ const styles = StyleSheet.create({
         borderColor: '#E9E9E9',
         elevation: 10,
         height: 50,
-        width: '100%',
+        width: '90%',
         fontSize: 20,
         color: "#A39F9F",
         paddingHorizontal: 15,
-        marginBottom: 15,
+        marginVertical: 15,
     },
     box: {
-        backgroundColor: 'black',
+        backgroundColor: 'white',
         height: 200,
-        width: 125,
+        width: 120,
         borderRadius: 10,
         alignItems: 'center',
+        marginHorizontal: 4,
     },
     image: {
         height: 150,
