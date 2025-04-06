@@ -1,26 +1,135 @@
 import { Text, View, TextInput, StyleSheet, TouchableOpacity, ScrollView, Image, FlatList } from "react-native";
 import { useState} from "react";
+import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
 
     const items = [
-        { id: '1', title: 'Green blouse', tag: 'Vintage', type: 'Top', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$10'},
-        { id: '2', title: 'spiffy shoes', tag: 'Trending', type: 'Accessories', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$20'},
-        { id: '3', title: 'joe mama pants', tag: 'Upcoming', type: 'Bottom', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$30'},
-        { id: '4', title: 'Green blouse', tag: 'Vintage', type: 'Bottom', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$10'},
-        { id: '5', title: 'spiffy shoes', tag: 'Upcoming', type: 'Accessories', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$20'},
-        { id: '6', title: 'joe mama pants', tag: 'Vintage', type: 'Top', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$30'},
+        {
+            "id": "1",
+            "name": "Blue Blouse",
+            "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743901396/Joanna_Blouse_u6ie8h.jpg",
+            "type": "top",
+            "tag": "vintage"
+          },
+          {
+            "id": "2",
+            "name": "Striped Shirt",
+            "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743901486/This_item_is_unavailable_-_Etsy_vngper.jpg",
+            "type": "top",
+            "tag": "vintage"
+          },
+          {
+            "id": "3",
+            "name": "White Off-Shoulder Top",
+            "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743901486/Vintage_1980s_blouse_from_Dalena_Vintage_iompep.jpg",
+            "type": "top",
+            "tag": "vintage"
+          },
+          {
+            "id": "4",
+            "name": "Orange Pants with Gold Buttons",
+            "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743901943/1940s_Swing_Trousers_-_Rust_zqb0o9.jpg",
+            "type": "pants",
+            "tag": "vintage"
+          },
+          {
+            "id": "5",
+            "name": "Brass Pocketwatch",
+            "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902115/Old_Clocks_pocket_watches_k2t1tk.jpg",
+            "type": "accessory",
+            "tag": "vintage"
+          },
+          {
+            "id": "6",
+            "name": "Jewel Hairband",
+            "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902122/Crowley_Party_vws2vp.jpg",
+            "type": "accessory",
+            "tag": "vintage"
+          },
+          {
+            "id": "7",
+            "name": "Black Floral Top",
+            "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902295/Open-shoulder_Blouse_kk1fpd.jpg",
+            "type": "top",
+            "tag": "trending"
+          },
+          {
+            "id": "8",
+            "name": "Cream Top",
+            "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902305/Designer_Collection_Sale_Moda_Operandi_esezpe.jpg",
+            "type": "top",
+            "tag": "trending"
+          },
+          {
+            "id": "9",
+            "name": "Flare Jeans",
+            "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902436/rag_bone_Flexi_Sofie_Full_Length_High_Rise_Wide_Leg_Jeans_in_Whitney_at_Nordstrom_Size_32_fnahal.jpg",
+            "type": "pants",
+            "tag": "trending"
+          },
+          {
+            "id": "10",
+            "name": "Green Flowy Pants",
+            "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902424/Designer_Ready_To_Wear_Shorts_Pants_and_Trousers_ZIMMERMANN_elzcx5.jpg",
+            "type": "pants",
+            "tag": "trending"
+          },
+          {
+            "id": "11",
+            "name": "Jewelry Belt",
+            "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902533/nunqjskhaktikubf32mp.jpg",
+            "type": "accessory",
+            "tag": "trending"
+          },
+          {
+            "id": "12",
+            "name": "Gold Sunglasses",
+            "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902550/Shop_Women_s_Accessories_odhnjg.jpg",
+            "type": "accessory",
+            "tag": "trending"
+          },
+          {
+            "id": "13",
+            "name": "Floral Chain Necklace",
+            "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902555/Embossed_Chain_Belt_in_Antique_Brass_Women_s_at_Urban_Outfitters_hmk2kz.jpg",
+            "type": "accessory",
+            "tag": "trending"
+          },
+          {
+            "id": "14",
+            "name": "Black Asymmetrical Top",
+            "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902709/Stargirl_Aesthetic_Asymmetric_Crop_Top_gvnduq.jpg",
+            "type": "top",
+            "tag": "upcoming"
+          },
+          {
+            "id": "15",
+            "name": "Jeans with Denim Bows",
+            "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902828/Fall_winter_Women_Jeans_Stylish_Bow_Tie_High_Waist_Straight_Legs_Denim_Pants_dw0gby.jpg",
+            "type": "pants",
+            "tag": "upcoming"
+          },
+          {
+            "id": "16",
+            "name": "Black Pants with Zippers",
+            "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902862/TECHWEAR_WIDE_LEG_MULTI_POCKET_PANTS_vogffa.jpg",
+            "type": "pants",
+            "tag": "upcoming"
+          },
     ];
+
+    const router = useRouter();
 
     const groupItemsIntoOutfits = (items) => {
         const grouped = [];
         const used = new Set();
       
         while (true) {
-          const top = items.find(item => item.type === 'Top' && !used.has(item.id));
-          const bottom = items.find(item => item.type === 'Bottom' && !used.has(item.id));
-          const accessories = items.find(item => item.type === 'Accessories' && !used.has(item.id));
+          const top = items.find(item => item.type === 'top' && !used.has(item.id));
+          const bottom = items.find(item => item.type === 'pants' && !used.has(item.id));
+          const accessories = items.find(item => item.type === 'accessory' && !used.has(item.id));
       
           if (!top || !bottom || !accessories) break;
       
@@ -84,7 +193,7 @@ export default function Home() {
         <ScrollView>
             {outfits.map((outfit,index) => (
             <View key={index}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>router.push({ pathname: "/outfitDetails", params: { item: JSON.stringify(outfit) }})}>
                     <Text style= {{
                         color: 'white',
                         alignSelf: 'flex-end',
@@ -99,21 +208,21 @@ export default function Home() {
                     {outfit.map((item) => (
                         <View key={item.id} style={styles.box}>
                         <Image
-                            source={{uri: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain'}}
+                            source={{ uri: item.imageUrl}}
                             style={styles.image}
                         />
                         <View style={[styles.pricebox, 
                            {backgroundColor:
-                            item.tag == 'Vintage' ? '#FFC4DF':
-                            item.tag == 'Trending' ? '#D63B82':
-                            item.tag == 'Upcoming' ? '#D30262': null
+                            item.tag == 'vintage' ? '#FFC4DF':
+                            item.tag == 'trending' ? '#D63B82':
+                            item.tag == 'upcoming' ? '#D30262': null
                            }
                         ]}>
                             <Text style={{
                                 color: 'white',
                                 fontFamily: 'Abhaya Libre Regular',
                                 fontSize: 17,
-                            }}>{item.price}</Text>
+                            }}>{item.tag}</Text>
                         </View>
                     </View>
                     ))}
