@@ -5,12 +5,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function Home() {
 
     const items = [
-        { id: '1', title: 'Green blouse', type: 'Top', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$10'},
-        { id: '2', title: 'spiffy shoes', type: 'Accessories', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$20'},
-        { id: '3', title: 'joe mama pants', type: 'Bottom', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$30'},
-        { id: '4', title: 'Green blouse', type: 'Bottom', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$10'},
-        { id: '5', title: 'spiffy shoes', type: 'Accessories', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$20'},
-        { id: '6', title: 'joe mama pants', type: 'Top', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$30'},
+        { id: '1', title: 'Green blouse', tag: 'Vintage', type: 'Top', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$10'},
+        { id: '2', title: 'spiffy shoes', tag: 'Trending', type: 'Accessories', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$20'},
+        { id: '3', title: 'joe mama pants', tag: 'Upcoming', type: 'Bottom', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$30'},
+        { id: '4', title: 'Green blouse', tag: 'Vintage', type: 'Bottom', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$10'},
+        { id: '5', title: 'spiffy shoes', tag: 'Upcoming', type: 'Accessories', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$20'},
+        { id: '6', title: 'joe mama pants', tag: 'Vintage', type: 'Top', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$30'},
     ];
 
     const groupItemsIntoOutfits = (items) => {
@@ -102,7 +102,13 @@ export default function Home() {
                             source={{uri: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain'}}
                             style={styles.image}
                         />
-                        <View style={styles.pricebox}>
+                        <View style={[styles.pricebox, 
+                           {backgroundColor:
+                            item.tag == 'Vintage' ? '#FFC4DF':
+                            item.tag == 'Trending' ? '#D63B82':
+                            item.tag == 'Upcoming' ? '#D30262': null
+                           }
+                        ]}>
                             <Text style={{
                                 color: 'white',
                                 fontFamily: 'Abhaya Libre Regular',
