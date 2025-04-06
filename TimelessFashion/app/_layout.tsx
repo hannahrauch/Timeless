@@ -7,7 +7,7 @@ export default function RootLayout() {
     'Bio Rhyme SemiBold': require('../assets/fonts/BioRhyme-SemiBold.ttf'),
   });
 
-  return <Stack>
+  return <Stack screenOptions={{ headerShown: false}}>
     <Stack.Screen name="index" options={{ headerShown: false}} />
   </Stack>
 }

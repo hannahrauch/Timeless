@@ -1,5 +1,6 @@
 import { Text, View, TextInput, StyleSheet, TouchableOpacity, ScrollView, Image, FlatList } from "react-native";
 import { useState} from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -7,7 +8,7 @@ export default function Home() {
         setSearchQuery(query);
     }
   return (
-    <View
+    <SafeAreaView
       style={{
         flex: 1,
         justifyContent: "center",
@@ -41,6 +42,14 @@ export default function Home() {
                 </Text>
             </View>
         </View>
+
+        <View style={{
+                height: 2,
+                width: '90%',
+                backgroundColor: '#F7FF8B',
+                marginVertical: 15,
+            }}></View>
+
         <ScrollView>
             <TouchableOpacity>
                 <Text style= {{
@@ -52,10 +61,6 @@ export default function Home() {
                 }}>{`See outfit details >`}
                 </Text>
             </TouchableOpacity>
-
-            <View>
-
-            </View>
 
             <View style={{justifyContent: 'space-between', flexDirection: 'row', width: '90%'}}>
                 <View style={styles.box}>
@@ -108,7 +113,7 @@ export default function Home() {
             </View>
             
         </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -151,7 +156,7 @@ const styles = StyleSheet.create({
 
     },
     textStyle1: {
-        color: 'white',
+        color: '#1C2021',
         fontSize: 20,
         fontFamily: 'Abhaya Libre Regular',
     },
