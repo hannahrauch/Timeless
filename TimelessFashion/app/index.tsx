@@ -20,7 +20,7 @@ export default function Index() {
         <Text style={{
           fontFamily: 'Bio Rhyme SemiBold',
           fontSize: 33,
-          margin: 40,
+          margin: 20,
         }}>
           Timeless Fashion
         </Text>
