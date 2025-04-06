@@ -54,7 +54,7 @@ const OutfitDetails = () => {
                                 <Text style={styles.textfont}>Name: {currentItem.name} </Text>
                                 <Text style={styles.textfont}>Type: {currentItem.type}</Text>
                                 <Text style={styles.textfont}>Tag: {currentItem.tag}</Text>
-                                <Text style={styles.textfont}>Sustainability: </Text>
+                                <Text style={styles.textfont}>Sustainability: 7.5/10</Text>
                                 <Text style={styles.textfont}>Seller Rating: 8/10</Text>
 
                                 <TouchableOpacity
