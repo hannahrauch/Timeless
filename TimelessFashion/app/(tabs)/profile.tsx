@@ -1,12 +1,13 @@
 import { Text, View, StyleSheet } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { SafeAreaView } from "react-native-safe-area-context";
 export default function Profile() {
   return (
     <View
       style={{
         flex: 1,
-        justifyContent: "center",
         alignItems: "center",
+        backgroundColor: '#DB658D',
       }}
     >
           <View style = {styles.box}>
@@ -17,12 +18,12 @@ export default function Profile() {
               Profile
             </Text>
           </View>
-          <View style = {styles.contentbox}>
+          <View style={{marginTop: 30}}>
             <Text style ={{
               color : 'white',
               fontSize : 25,
             }}>
-              Jazmin Guiterrez:
+              Jazmin Gutierrez:
             </Text>
             <Text style = {{
               color : '#7E0A3F',
@@ -91,14 +92,9 @@ const styles = StyleSheet.create({
   box: {
     backgroundColor: '#7E0A3F',
     height:200,
-    width:400,
+    width:'100%',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  contentbox:
-  {
-    backgroundColor: '#DB658D',
-    height: 600,
-    width: 400,
-  },
+  
 });

@@ -3,6 +3,36 @@ import { useState} from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Home() {
+
+    const items = [
+        { id: '1', title: 'Green blouse', tag: 'Vintage', type: 'Top', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$10'},
+        { id: '2', title: 'spiffy shoes', tag: 'Trending', type: 'Accessories', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$20'},
+        { id: '3', title: 'joe mama pants', tag: 'Upcoming', type: 'Bottom', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$30'},
+        { id: '4', title: 'Green blouse', tag: 'Vintage', type: 'Bottom', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$10'},
+        { id: '5', title: 'spiffy shoes', tag: 'Upcoming', type: 'Accessories', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$20'},
+        { id: '6', title: 'joe mama pants', tag: 'Vintage', type: 'Top', image: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain', price: '$30'},
+    ];
+
+    const groupItemsIntoOutfits = (items) => {
+        const grouped = [];
+        const used = new Set();
+      
+        while (true) {
+          const top = items.find(item => item.type === 'Top' && !used.has(item.id));
+          const bottom = items.find(item => item.type === 'Bottom' && !used.has(item.id));
+          const accessories = items.find(item => item.type === 'Accessories' && !used.has(item.id));
+      
+          if (!top || !bottom || !accessories) break;
+      
+          grouped.push([top, bottom, accessories]);
+          used.add(top.id);
+          used.add(bottom.id);
+          used.add(accessories.id);
+        }
+      
+        return grouped;
+      };
+    const outfits = groupItemsIntoOutfits(items);
     const [searchQuery, setSearchQuery] = useState("");
     const handleSearch = async (query: string) => {
         setSearchQuery(query);
@@ -48,70 +78,56 @@ export default function Home() {
                 width: '90%',
                 backgroundColor: '#F7FF8B',
                 marginVertical: 15,
-            }}></View>
+            }}>
+        </View>
 
         <ScrollView>
-            <TouchableOpacity>
-                <Text style= {{
-                    color: 'white',
-                    alignSelf: 'flex-end',
-                    margin: 10,
-                    fontSize: 20,
-                    fontFamily: 'Abhaya Libre Regular',
-                }}>{`See outfit details >`}
-                </Text>
-            </TouchableOpacity>
+            {outfits.map((outfit,index) => (
+            <View key={index}>
+                <TouchableOpacity>
+                    <Text style= {{
+                        color: 'white',
+                        alignSelf: 'flex-end',
+                        margin: 10,
+                        fontSize: 20,
+                        fontFamily: 'Abhaya Libre Regular',
+                    }}>{`See outfit details >`}
+                    </Text>
+                </TouchableOpacity>
 
-            <View style={{justifyContent: 'space-between', flexDirection: 'row', width: '90%'}}>
-                <View style={styles.box}>
-                    <Image
-                        source={{uri: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain'}}
-                        style={styles.image}
-                    />
-                    <View style={styles.pricebox}>
-                        <Text style={{
-                            color: 'white',
-                            fontFamily: 'Abhaya Libre Regular',
-                            fontSize: 17,
-                        }}>$10</Text>
+                <View style={{justifyContent: 'space-between', flexDirection: 'row', width: '90%'}}>
+                    {outfit.map((item) => (
+                        <View key={item.id} style={styles.box}>
+                        <Image
+                            source={{uri: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain'}}
+                            style={styles.image}
+                        />
+                        <View style={[styles.pricebox, 
+                           {backgroundColor:
+                            item.tag == 'Vintage' ? '#FFC4DF':
+                            item.tag == 'Trending' ? '#D63B82':
+                            item.tag == 'Upcoming' ? '#D30262': null
+                           }
+                        ]}>
+                            <Text style={{
+                                color: 'white',
+                                fontFamily: 'Abhaya Libre Regular',
+                                fontSize: 17,
+                            }}>{item.price}</Text>
+                        </View>
                     </View>
+                    ))}
                 </View>
-                <View style={styles.box}>
-                    <Image
-                        source={{uri: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain'}}
-                        style={styles.image}
-                    />
-                    <View style={styles.pricebox}>
-                        <Text style={{
-                            color: 'white',
-                            fontFamily: 'Abhaya Libre Regular',
-                            fontSize: 17,
-                        }}>$10</Text>
-                    </View>
-                </View>
-                <View style={styles.box}>
-                    <Image
-                        source={{uri: 'https://th.bing.com/th/id/OIP.Cet7Hd9-jbva_ZCOpjCFwQAAAA?rs=1&pid=ImgDetMain'}}
-                        style={styles.image}
-                    />
-                    <View style={styles.pricebox}>
-                        <Text style={{
-                            color: 'white',
-                            fontSize: 17,
-                            fontFamily: 'Abhaya Libre Regular',
-                        }}>$10</Text>
-                    </View>
+
+                <View style={{
+                    height: 2,
+                    width: '100%',
+                    backgroundColor: '#F7FF8B',
+                    marginVertical: 15,
+                }}>
                 </View>
             </View>
-            
-            <View style={{
-                height: 2,
-                width: '100%',
-                backgroundColor: '#F7FF8B',
-                marginVertical: 30,
-            }}>
-            </View>
-            
+            ))}
         </ScrollView>
     </SafeAreaView>
   );
