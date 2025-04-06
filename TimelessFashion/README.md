@@ -8,7 +8,7 @@ Fast fashion leads to impulse purchases and as such is a major contributor to en
 Timeless Fashion is a mobile app that helps users save money and lessens the negative impacts of fast fashion. Users are able to get inspiration for their next outfit with an assortment of vintage, trending, and future inspired pieces to make up the whole outfit (top, bottom, and an accessory).
 
 ## How we built it
-We built it using a MERN stack, MongoDB, and Cloudinary. 
+We built it using a MERN stack: React Native, MongoDB, and Cloudinary. 
 
 ## Challenges we ran into
 -Learning React Native to build our frontend
