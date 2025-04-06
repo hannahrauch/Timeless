@@ -23,8 +23,10 @@ export default function Favorites() {
       <View style = {styles.subtitlebox}>
         <Text style = {{
           color: 'white',
-          fontSize: 28,
-          fontFamily: 'Bio Rhyme SemiBold'
+          fontSize: 25,
+          fontFamily: 'Bio Rhyme SemiBold',
+          alignSelf: 'flex-start',
+          marginLeft: 10,
           }}>
           Saved Items
         </Text>
@@ -52,14 +54,15 @@ export default function Favorites() {
                 $10.00
               </Text>
              </View>
-          <Ionicons name="close-circle-sharp"></Ionicons>
           </View>
         </View>
         <Text style = {{
           color:'white',
           marginTop: 50,
           fontSize: 25,
-          fontFamily: 'Bio Rhyme SemiBold'
+          fontFamily: 'Bio Rhyme SemiBold',
+          alignSelf: 'flex-start',
+          marginLeft: 10,
         }}>
           Saved Outfits
         </Text>
@@ -71,7 +74,7 @@ export default function Favorites() {
         }}>
           Name: Vintage
         </Text>
-        <Ionicons name="close-circle-sharp" size={25}></Ionicons>
+        <Ionicons name="close-circle-outline" size={25}></Ionicons>
           </View>
         
         <Text style = {{

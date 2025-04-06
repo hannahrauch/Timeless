@@ -11,112 +11,144 @@ export default function Home() {
             "name": "Blue Blouse",
             "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743901396/Joanna_Blouse_u6ie8h.jpg",
             "type": "top",
-            "tag": "vintage"
+            "tag": "vintage",
+            "price": "10",
+            "sustainability": "7"
           },
           {
             "id": "2",
             "name": "Striped Shirt",
             "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743901486/This_item_is_unavailable_-_Etsy_vngper.jpg",
             "type": "top",
-            "tag": "vintage"
+            "tag": "vintage",
+            "price": "7",
+            "sustainability": "6"
           },
           {
             "id": "3",
             "name": "White Off-Shoulder Top",
             "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743901486/Vintage_1980s_blouse_from_Dalena_Vintage_iompep.jpg",
             "type": "top",
-            "tag": "vintage"
+            "tag": "vintage",
+            "price": "6",
+            "sustainability": "4"
           },
           {
             "id": "4",
             "name": "Orange Pants with Gold Buttons",
             "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743901943/1940s_Swing_Trousers_-_Rust_zqb0o9.jpg",
             "type": "pants",
-            "tag": "vintage"
+            "tag": "vintage",
+            "price": "9",
+            "sustainability": "5"
           },
           {
             "id": "5",
             "name": "Brass Pocketwatch",
             "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902115/Old_Clocks_pocket_watches_k2t1tk.jpg",
             "type": "accessory",
-            "tag": "vintage"
+            "tag": "vintage",
+            "price": "13",
+            "sustainability": "7"
           },
           {
             "id": "6",
             "name": "Jewel Hairband",
             "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902122/Crowley_Party_vws2vp.jpg",
             "type": "accessory",
-            "tag": "vintage"
+            "tag": "vintage",
+            "price": "5",
+            "sustainability": "9"
           },
           {
             "id": "7",
             "name": "Black Floral Top",
             "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902295/Open-shoulder_Blouse_kk1fpd.jpg",
             "type": "top",
-            "tag": "trending"
+            "tag": "trending",
+            "price": "7",
+            "sustainability": "3"
           },
           {
             "id": "8",
             "name": "Cream Top",
             "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902305/Designer_Collection_Sale_Moda_Operandi_esezpe.jpg",
             "type": "top",
-            "tag": "trending"
+            "tag": "trending",
+            "price": "9",
+            "sustainability": "8"
           },
           {
             "id": "9",
             "name": "Flare Jeans",
             "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902436/rag_bone_Flexi_Sofie_Full_Length_High_Rise_Wide_Leg_Jeans_in_Whitney_at_Nordstrom_Size_32_fnahal.jpg",
             "type": "pants",
-            "tag": "trending"
+            "tag": "trending",
+            "price": "12",
+            "sustainability": "10"
           },
           {
             "id": "10",
             "name": "Green Flowy Pants",
             "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902424/Designer_Ready_To_Wear_Shorts_Pants_and_Trousers_ZIMMERMANN_elzcx5.jpg",
             "type": "pants",
-            "tag": "trending"
+            "tag": "trending",
+            "price": "4",
+            "sustainability": "6"
           },
           {
             "id": "11",
             "name": "Jewelry Belt",
             "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902533/nunqjskhaktikubf32mp.jpg",
             "type": "accessory",
-            "tag": "trending"
+            "tag": "trending",
+            "price": "3",
+            "sustainability": "2"
           },
           {
             "id": "12",
             "name": "Gold Sunglasses",
             "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902550/Shop_Women_s_Accessories_odhnjg.jpg",
             "type": "accessory",
-            "tag": "trending"
+            "tag": "trending",
+            "price": "4",
+            "sustainability": "5"
           },
           {
             "id": "13",
             "name": "Floral Chain Necklace",
             "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902555/Embossed_Chain_Belt_in_Antique_Brass_Women_s_at_Urban_Outfitters_hmk2kz.jpg",
             "type": "accessory",
-            "tag": "trending"
+            "tag": "trending",
+            "price": "6",
+            "sustainability": "7"
           },
           {
             "id": "14",
             "name": "Black Asymmetrical Top",
             "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902709/Stargirl_Aesthetic_Asymmetric_Crop_Top_gvnduq.jpg",
             "type": "top",
-            "tag": "upcoming"
+            "tag": "upcoming",
+            "price": "6",
+            "sustainability": "4"
           },
           {
             "id": "15",
             "name": "Jeans with Denim Bows",
             "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902828/Fall_winter_Women_Jeans_Stylish_Bow_Tie_High_Waist_Straight_Legs_Denim_Pants_dw0gby.jpg",
             "type": "pants",
-            "tag": "upcoming"
+            "tag": "upcoming",
+            "price": "13",
+            "sustainability": "10"
           },
           {
             "id": "16",
             "name": "Black Pants with Zippers",
             "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902862/TECHWEAR_WIDE_LEG_MULTI_POCKET_PANTS_vogffa.jpg",
             "type": "pants",
-            "tag": "upcoming"
+            "tag": "upcoming",
+            "price": "12",
+            "sustainability": "9"
           },
     ];
 
@@ -222,7 +254,16 @@ export default function Home() {
                                 color: 'white',
                                 fontFamily: 'Abhaya Libre Regular',
                                 fontSize: 17,
-                            }}>{item.tag}</Text>
+                            }}>{item.tag} ${item.price}</Text>
+                        </View>
+                        
+                        <Image
+                            source={require("../../assets/images/leafimg2.png")}
+                            style={{position: 'absolute', right: -1, top: 0, height: 35, width: 35}}
+                            />
+                            <View
+                        style={{position: 'absolute', right: -2, width: 35, height: 30, borderRadius: 10, justifyContent: 'center', alignItems: 'center'}}>
+                            <Text style={{color: 'black', fontWeight: 600,}}>{item.sustainability}</Text>
                         </View>
                     </View>
                     ))}

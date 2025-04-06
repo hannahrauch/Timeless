@@ -8,6 +8,8 @@ interface Item {
     type: string;
     tag: string;
     imageUrl: string;
+    price: string;
+    sustainability: string;
 }
 
 const OutfitDetails = () => {
@@ -44,7 +46,7 @@ const OutfitDetails = () => {
                                     style={styles.itemImage}
                                     />
                                     <View>
-                                        <Text style={styles.textfont}>Item {currentItem.id}</Text> 
+                                        <Text style={styles.textfont}>Item {currentItem.id}: ${currentItem.price}</Text> 
                                         <Image
                                         source={require("../assets/images/yellowStars.png")}
                                         style={{width: 180, height: 32,}}
@@ -54,7 +56,7 @@ const OutfitDetails = () => {
                                 <Text style={styles.textfont}>Name: {currentItem.name} </Text>
                                 <Text style={styles.textfont}>Type: {currentItem.type}</Text>
                                 <Text style={styles.textfont}>Tag: {currentItem.tag}</Text>
-                                <Text style={styles.textfont}>Sustainability: 7.5/10</Text>
+                                <Text style={styles.textfont}>Sustainability: {currentItem.sustainability}</Text>
                                 <Text style={styles.textfont}>Seller Rating: 8/10</Text>
 
                                 <TouchableOpacity

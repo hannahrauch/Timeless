@@ -4,26 +4,31 @@ import { useState } from 'react';
 
 export default function Cart() {
   const [items, setItems] = useState([
-    {
-      "id": "1",
+    { "id": "1",
       "name": "Blue Blouse",
       "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743901396/Joanna_Blouse_u6ie8h.jpg",
       "type": "top",
-      "tag": "vintage"
+      "tag": "vintage",
+      "price": "10",
+      "sustainability": "7"
     },
     {
-      "id": "2",
-      "name": "Striped Shirt",
-      "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743901486/This_item_is_unavailable_-_Etsy_vngper.jpg",
-      "type": "top",
-      "tag": "vintage"
-    },
-    {
-      "id": "15",
-      "name": "Jeans with Denim Bows",
-      "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902828/Fall_winter_Women_Jeans_Stylish_Bow_Tie_High_Waist_Straight_Legs_Denim_Pants_dw0gby.jpg",
+      "id": "9",
+      "name": "Flare Jeans",
+      "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743902436/rag_bone_Flexi_Sofie_Full_Length_High_Rise_Wide_Leg_Jeans_in_Whitney_at_Nordstrom_Size_32_fnahal.jpg",
       "type": "pants",
-      "tag": "upcoming"
+      "tag": "trending",
+      "price": "12",
+      "sustainability": "10"
+    },
+    {
+      "id": "3",
+      "name": "White Off-Shoulder Top",
+      "imageUrl": "https://res.cloudinary.com/dffapgrga/image/upload/v1743901486/Vintage_1980s_blouse_from_Dalena_Vintage_iompep.jpg",
+      "type": "top",
+      "tag": "vintage",
+      "price": "6",
+      "sustainability": "4"
     },
   ]);
 
@@ -69,6 +74,9 @@ export default function Cart() {
           <Text style={{fontFamily: 'Abhaya Libre Regular', fontSize: 20}}>
             {item.name}
           </Text>
+          <Text style={{fontFamily: 'Abhaya Libre Regular', fontSize: 20}}>
+            ${item.price}
+          </Text>
         </View>
         <TouchableOpacity style={{position: 'absolute', right: 10, top: 10}}
         onPress={()=>deleteItem(item.id)}>
@@ -86,7 +94,7 @@ export default function Cart() {
           fontSize: 18,
         }}
         >
-          Total: $10.00
+          Total: $28.00
         </Text>
         <TouchableOpacity
         style={styles.checkoutBox}
